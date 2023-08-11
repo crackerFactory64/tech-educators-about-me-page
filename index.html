@@ -15,9 +15,10 @@
         <div class="container">
           <div class="even-columns">
             <p>
-              Hello! My name is Lee and I am an aspiring web developer. I've
-              made this page to practice my programming skills and celebrate
-              some of my favourite things, I hope you like it!
+              Hello! My name is <span class="accent">Lee</span> and I am an
+              aspiring web developer. I've made this page to practice my
+              programming skills and celebrate some of my favourite things, I
+              hope you like it!
             </p>
             <img
               src="https://i.ibb.co/LQhphkv/me.jpg"
@@ -52,27 +53,34 @@
             of cinema to move, entertain, and educate. Here are a few of my
             favourite shots from over the years:
           </p>
+          <small
+            >Can you name the films? Click on a image to reveal its
+            title.</small
+          >
           <div class="films__image-gallery">
             <figure>
               <img
-                src="https://assets.mubicdn.net/images/film/200/image-w1280.jpg?1563228004"
-                alt="Still from Wings of Desire"
+                src="https://shots.filmschoolrejects.com/wp-content/uploads/2015/07/taxi-driver.jpg"
+                alt="Still from Taxi Driver"
+                class="image-gallery__image"
               />
-              <figcaption>Wings of Desire (1987)</figcaption>
+              <figcaption>Taxi Driver (1976)</figcaption>
             </figure>
             <figure>
               <img
                 src="https://shots.filmschoolrejects.com/wp-content/uploads/2015/08/FARGO.jpg"
                 alt="Still from Fargo"
+                class="image-gallery__image"
               />
               <figcaption>Fargo (1996)</figcaption>
             </figure>
             <figure>
               <img
-                src="https://shots.filmschoolrejects.com/wp-content/uploads/2015/07/taxi-driver.jpg"
-                alt="Still from Taxi Driver"
+                src="https://assets.mubicdn.net/images/film/200/image-w1280.jpg?1563228004"
+                alt="Still from Wings of Desire"
+                class="image-gallery__image"
               />
-              <figcaption>Taxi Driver (1976)</figcaption>
+              <figcaption>Wings of Desire (1987)</figcaption>
             </figure>
           </div>
         </div>
@@ -82,8 +90,8 @@
           <h2>Music</h2>
           <p>
             What would life be without music? Doesn't bare thinking about. I
-            love listening to albums and going to see live music, these are some
-            tracks I've enjoyed recently:
+            love listening to albums and going to see live music, here are some
+            links to tracks I've enjoyed recently:
           </p>
           <ul>
             <li>
@@ -108,5 +116,20 @@
     <footer>
       <small>© Lee Mander 2023</small>
     </footer>
+    <script>
+      const images = [
+        ...document.getElementsByClassName("image-gallery__image"),
+      ];
+
+      function revealTitle(image) {
+        image.closest("figure").classList.add("show-title");
+      }
+
+      images.forEach((image) =>
+        image.addEventListener("click", (e) => {
+          revealTitle(e.target);
+        })
+      );
+    </script>
   </body>
 </html>

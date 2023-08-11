@@ -1,13 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap");
+
+:root {
+  --color-primary: hsl(120, 30%, 43%);
+  --color-secondary: hsl(51, 100%, 50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  text-align: balance;
+}
+
+.accent {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 .container {
   margin-inline: auto;
-  max-width: 1000px;
+  max-width: 70em;
   width: calc(100% - 4em);
+}
+
+.even-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0;
 }
 
 header,
 footer {
   text-align: center;
 }
- h1{
-  font-size: 2rem;
- }
+
+header {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding-block: 2em;
+}
+
+h1,
+h2 {
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+section {
+  padding-block: 3em;
+}
+
+section:nth-of-type(2n) {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.intro__image {
+  border: 0.5em solid var(--color-primary);
+  border-radius: 50%;
+  max-width: 20em;
+  margin-inline: auto;
+}
+
+.interest--games li:nth-of-type(2n) {
+  color: var(--color-secondary);
+}
+
+.films__image-gallery {
+  display: grid;
+  gap: 2em;
+}
+
+.interest--films figure {
+  text-align: center;
+}
+
+.image-gallery__image {
+  aspect-ratio: 16, 9;
+  cursor: pointer;
+  margin-inline: auto;
+  width: 60%;
+}
+
+figure.show-title > img {
+  cursor: unset;
+}
+
+figure > figcaption {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+}
+
+figure.show-title > figcaption {
+  opacity: 1;
+  transition: opacity ease-in 250ms;
+}
+
+.interest--music a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+footer {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 2em;
+}
+
+@media (width < 800px) {
+  .even-columns {
+    grid-template-columns: unset;
+  }
+
+  .intro__image {
+    order: -1;
+    max-width: 15em;
+  }
+
+  figure {
+    margin-inline: 0;
+  }
+
+  .image-gallery__image {
+    width: 100%;
+  }
+}
