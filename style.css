@@ -15,7 +15,7 @@ img {
 }
 
 p {
-  text-align: balance;
+  text-wrap: balance;
 }
 
 .accent {
@@ -25,7 +25,7 @@ p {
 
 .container {
   margin-inline: auto;
-  max-width: 70em;
+  max-width: 50em;
   width: calc(100% - 4em);
 }
 
@@ -79,8 +79,51 @@ section:nth-of-type(2n) {
   margin-inline: auto;
 }
 
-.interest--games li:nth-of-type(2n) {
-  color: var(--color-secondary);
+.games__list {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+}
+
+.list__game-container {
+  align-items: end;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  width: 15em;
+}
+
+.list__game-container > p {
+  background-color: hsla(0, 0%, 0%, 0.5);
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+  text-wrap: balance;
+  width: 100%;
+}
+
+.list__game-container[data-title="smg"] {
+  background-image: url(https://cdn.staticneo.com/p/2007/1/super_mario_galaxy_image5.jpg);
+}
+
+.list__game-container[data-title="ww"] {
+  background-image: url(https://i.ytimg.com/vi/oV1QVPL8cnw/maxresdefault.jpg);
+}
+
+.list__game-container[data-title="rb"] {
+  background-image: url(https://www.wired.com/images_blogs/gamelife/images/2008/07/14/rockband.jpg);
+}
+
+.list__game-container[data-title="mgs3"] {
+  background-image: url(https://gameworth.xyz/wp-content/uploads/Metal-Gear-Solid-3-snake-eater-jungle.jpg);
+}
+
+.list__game-container[data-title="rl"] {
+  background-image: url(https://m.media-amazon.com/images/M/MV5BODQxMjYyYTMtMWQyOC00MTQ3LWI0YjUtN2MxNTc5ZmFkZTU5XkEyXkFqcGdeQXVyOTMyOTQyNzA@._V1_.jpg);
 }
 
 .films__image-gallery {
@@ -114,6 +157,23 @@ figure.show-title > figcaption {
   transition: opacity ease-in 250ms;
 }
 
+.interest--music ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  list-style: none;
+}
+
+.interest--music li {
+  display: grid;
+  gap: 0.5em;
+}
+
+.interest--music img {
+  aspect-ratio: 1;
+  width: 20em;
+}
+
 .interest--music a {
   color: var(--color-secondary);
   text-decoration: none;
@@ -135,8 +195,22 @@ footer {
     max-width: 15em;
   }
 
+  .games__list {
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+  }
+
+  .list__game-container {
+    margin-inline: auto;
+  }
+
   figure {
     margin-inline: 0;
+  }
+
+  .interest--music ul {
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 
   .image-gallery__image {
