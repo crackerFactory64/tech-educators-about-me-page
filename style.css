@@ -37,7 +37,6 @@ body {
   font-weight: 400;
   line-height: 1.7;
   margin: 0;
-  text-wrap: balance;
 }
 
 header,
@@ -81,6 +80,7 @@ section:nth-of-type(2n) {
   gap: 1em;
   grid-template-columns: 1fr 1fr;
   list-style: none;
+  place-items: center;
 }
 
 .list__game-container {
@@ -95,10 +95,13 @@ section:nth-of-type(2n) {
 }
 
 .list__game-container > p {
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.7);
+  color: var(--color-secondary);
+  font-weight: 600;
   margin: 0;
   padding: 1em;
   text-align: center;
+  text-wrap: balance;
   width: 100%;
 }
 
@@ -186,7 +189,6 @@ footer {
     font-size: 1.3rem;
     line-height: 1.5;
     text-align: center;
-    text-wrap: wrap;
   }
 
   ul,
