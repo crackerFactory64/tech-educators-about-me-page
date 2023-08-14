@@ -85,10 +85,10 @@ section:nth-of-type(2n) {
 
 .list__game-container {
   align-items: end;
+  aspect-ratio: 1;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   width: 15em;
@@ -125,6 +125,10 @@ section:nth-of-type(2n) {
   background-image: url(https://m.media-amazon.com/images/M/MV5BODQxMjYyYTMtMWQyOC00MTQ3LWI0YjUtN2MxNTc5ZmFkZTU5XkEyXkFqcGdeQXVyOTMyOTQyNzA@._V1_.jpg);
 }
 
+.list__game-container[data-title="hl2"] {
+  background-image: url(https://www.dsogaming.com/wp-content/uploads/2022/09/Half-Life-2-VR-Mod-feature-672x372.jpg);
+}
+
 .films__image-gallery {
   display: grid;
   gap: 2em;
@@ -138,7 +142,7 @@ section:nth-of-type(2n) {
   aspect-ratio: 16, 9;
   cursor: pointer;
   margin-inline: auto;
-  width: 60%;
+  width: 100%;
 }
 
 figure.show-title > img {
@@ -210,17 +214,16 @@ footer {
   }
 
   .games__list {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-inline: 0;
-  }
-
-  .list__game-container {
-    margin-inline: auto;
-    width: 100%;
   }
 
   figure {
     margin-inline: 0;
+  }
+
+  .image-gallery__image {
+    width: 100%;
   }
 
   .interest--music ul {
@@ -230,9 +233,5 @@ footer {
 
   .interest--music li {
     margin-inline: auto;
-  }
-
-  .image-gallery__image {
-    width: 100%;
   }
 }
