@@ -14,10 +14,6 @@ img {
   max-width: 100%;
 }
 
-p {
-  text-wrap: balance;
-}
-
 .accent {
   color: var(--color-primary);
   font-weight: 600;
@@ -41,6 +37,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   margin: 0;
+  text-wrap: balance;
 }
 
 header,
@@ -102,7 +99,6 @@ section:nth-of-type(2n) {
   margin: 0;
   padding: 1em;
   text-align: center;
-  text-wrap: balance;
   width: 100%;
 }
 
@@ -186,8 +182,24 @@ footer {
 }
 
 @media (width < 800px) {
+  body {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: wrap;
+  }
+
+  ul,
+  ol {
+    padding-left: 0;
+  }
+
   .even-columns {
     grid-template-columns: unset;
+  }
+
+  .even-columns > * {
+    width: 100%;
   }
 
   .intro__image {
@@ -202,6 +214,7 @@ footer {
 
   .list__game-container {
     margin-inline: auto;
+    width: 100%;
   }
 
   figure {
@@ -211,6 +224,10 @@ footer {
   .interest--music ul {
     grid-template-columns: 1fr;
     padding: 0;
+  }
+
+  .interest--music li {
+    margin-inline: auto;
   }
 
   .image-gallery__image {
